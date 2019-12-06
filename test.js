@@ -1,13 +1,6 @@
 import test from "ava"
-import theModule from "."
+import bestForBloom from "."
 
 test("main", (t) => {
-    t.throws(() => {
-        theModule(123)
-    }, {
-        instanceOf: TypeError,
-        message: "Expected a string, got number",
-    })
-
-    t.is(theModule("unicorns"), "unicorns & rainbows")
+    t.deepEqual(bestForBloom(100000, 1e-6), { bits: 2875518, hash: 20 })
 })

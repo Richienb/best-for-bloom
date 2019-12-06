@@ -1,41 +1,36 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# Best For Bloom [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/best-for-bloom/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/best-for-bloom)
 
-My awesome module.
+Calculate amount of bits and hash functions based on the amount of items and the probability of false positives.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/best-for-bloom.png)](https://npmjs.com/package/best-for-bloom)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install best-for-bloom
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const bestForBloom = require("best-for-bloom");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+bestForBloom(100000, 1e-6)
+//=> { bits: 2875518, hash: 20 }
 ```
 
 ## API
 
-### theModule(input, options?)
+### bestForBloom(items, probability)
 
-#### input
+#### items
 
-Type: `string`
+Type: `number`
 
-Lorem ipsum.
+Number of items in the filter.
 
-#### options
+#### probability
 
-Type: `object`
+Type: `number`
 
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+Probability of false positives, decimal between 0 and 1. Default is 1e-7 (1 in 1 million).
